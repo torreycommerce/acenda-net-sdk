@@ -23,7 +23,6 @@
 /Users/arrrrny/Developer/acenda-sdk/acenda-net-sdk/acenda-net-sdk/AcendaSDK/bin/Debug/Newtonsoft.Json.xml
 /Users/arrrrny/Developer/acenda-sdk/acenda-net-sdk/acenda-net-sdk/AcendaSDK/bin/Debug/System.Net.Http.xml
 /Users/arrrrny/Developer/acenda-sdk/acenda-net-sdk/acenda-net-sdk/AcendaSDK/bin/Debug/System.Net.Http.WebRequest.xml
-/Users/arrrrny/Developer/acenda-sdk/acenda-net-sdk/acenda-net-sdk/AcendaSDK/obj/Debug/acenda-net-sdk.csprojAssemblyReference.cache
 /Users/arrrrny/Developer/acenda-sdk/acenda-net-sdk/acenda-net-sdk/AcendaSDK/obj/Debug/acenda-net-sdk.csproj.CopyComplete
 /Users/arrrrny/Developer/acenda-sdk/acenda-net-sdk/acenda-net-sdk/AcendaSDK/obj/Debug/AcendaSDK.dll
 /Users/arrrrny/Developer/acenda-sdk/acenda-net-sdk/acenda-net-sdk/AcendaSDK/obj/Debug/AcendaSDK.pdb

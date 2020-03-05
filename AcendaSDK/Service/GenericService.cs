@@ -1,67 +1,53 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using AcendaSDK.DTOs;
 
 namespace AcendaSDK.Service
 {
-    public class CustomerService : IService
+    public class GenericService:IService
     {
         private static object lockObject = new object();
-        private static CustomerService customerService;
+        private static GenericService genericService;
         private AuthInfo _authInfo = new AuthInfo();
         private AuthParameters _authParameters = new AuthParameters();
-        private CustomerService(AuthInfo authInfo, AuthParameters authParameters)
+        private string _serviceName;
+
+        public GenericService(AuthInfo authInfo, AuthParameters authParameters,string serviceName)
         {
             _authParameters = authParameters;
             _authInfo = authInfo;
+            _serviceName = serviceName;
         }
+
         public BaseDTO Create(object data)
         {
-
-            Response response = new Response();
-            var type = new CreateUpdateCustomerDTO();
-
-            if (data.GetType() == type.GetType())
+            var token = AuthorizationService.Authorize(_authParameters.ClientId, _authParameters.ClientSecret, _authParameters.StoreName);
+            var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName,"api/"+ _serviceName, string.Empty, token.access_token);
+            var result = HelperFunctions.HttpPost(url, data).GetAwaiter().GetResult();
+            if (result != null)
             {
 
-
-                var token = AuthorizationService.Authorize(_authParameters.ClientId, _authParameters.ClientSecret, _authParameters.StoreName);
-                var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName, Constants.apiCustomer, string.Empty, token.access_token);
-                var result = HelperFunctions.HttpPost(url, data).GetAwaiter().GetResult();
-                if (result != null)
-                {
-
-                    return result;
-
-                }
-                else
-                {
-                    return new BaseDTO()
-                    {
-                        code = (int)HttpStatusCode.BadRequest,
-
-
-                    };
-                }
+                return result;
 
             }
             else
             {
-                throw new System.Exception("Not suppoerted type of parameter");
+                return new BaseDTO()
+                {
+                    code = (int)HttpStatusCode.BadRequest,
+
+                };
             }
         }
+
 
         public BaseDTO Delete(string id)
         {
             Response response = new Response();
             BaseDTO baseDTO = new BaseDTO();
             var token = AuthorizationService.Authorize(_authParameters.ClientId, _authParameters.ClientSecret, _authParameters.StoreName);
-            var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName, Constants.apiCustomer, "" + id, token.access_token);
+            var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName, "api/" + _serviceName, "?id=" + id, token.access_token);
             var result = HelperFunctions.HttpDelete(url).GetAwaiter().GetResult();
             if (result.IsSuccessStatusCode)
             {
@@ -83,48 +69,15 @@ namespace AcendaSDK.Service
                 baseDTO.code = (int)result.StatusCode;
                 return baseDTO;
             }
-
-
             return baseDTO;
         }
 
         public T GetAll<T>() where T : new()
         {
             Response response = new Response();
-            T customerListDto = new T();
+            T genericResponseDto = new T();
             var token = AuthorizationService.Authorize(_authParameters.ClientId, _authParameters.ClientSecret, _authParameters.StoreName);
-            var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName, Constants.apiCustomer, "", token.access_token);
-            var result = HelperFunctions.HttpGet(url).GetAwaiter().GetResult();
-            if (result.IsSuccessStatusCode)
-            {
-                response.HttpStatusCode = result.StatusCode;
-                response.Result = result.Content.ReadAsAsync<CustomerListDTO>().Result;
-                if (response.Result != null)
-                {
-                    customerListDto = (T)response.Result;
-                }
-                else
-                {
-                    return default(T);
-                }
-            }
-            else
-            {
-                response.HttpStatusCode = result.StatusCode;
-                return customerListDto;
-            }
-
-
-            return customerListDto;
-
-        }
-
-        public T GetById<T>(string id) where T : new()
-        {
-            Response response = new Response();
-            T customerDTO = new T();
-            var token = AuthorizationService.Authorize(_authParameters.ClientId, _authParameters.ClientSecret, _authParameters.StoreName);
-            var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName, Constants.apiCustomer, id, token.access_token);
+            var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName, "api/" + _serviceName, "" , token.access_token);
             var result = HelperFunctions.HttpGet(url).GetAwaiter().GetResult();
             if (result.IsSuccessStatusCode)
             {
@@ -132,7 +85,7 @@ namespace AcendaSDK.Service
                 response.Result = result.Content.ReadAsAsync<T>().Result;
                 if (response.Result != null)
                 {
-                    customerDTO = (T)response.Result;
+                    genericResponseDto = (T)response.Result;
                 }
                 else
                 {
@@ -142,64 +95,66 @@ namespace AcendaSDK.Service
             else
             {
                 response.HttpStatusCode = result.StatusCode;
-                return customerDTO;
+                return genericResponseDto;
             }
 
 
-            return customerDTO;
+            return genericResponseDto;
+        }
+
+        public T GetById<T>(string id) where T : new()
+        {
+            Response response = new Response();
+            T genericDTO = new T();
+            var token = AuthorizationService.Authorize(_authParameters.ClientId, _authParameters.ClientSecret, _authParameters.StoreName);
+            var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName, "api/"+ _serviceName, id, token.access_token);
+            var result = HelperFunctions.HttpGet(url).GetAwaiter().GetResult();
+            if (result.IsSuccessStatusCode)
+            {
+                response.HttpStatusCode = result.StatusCode;
+                response.Result = result.Content.ReadAsAsync<T>().Result;
+                if (response.Result != null)
+                {
+                    genericDTO = (T)response.Result;
+                }
+                else
+                {
+                    return default(T);
+                }
+            }
+            else
+            {
+                response.HttpStatusCode = result.StatusCode;
+                return genericDTO;
+            }
+
+
+            return genericDTO;
         }
 
         public BaseDTO Update(string id, object data)
         {
-            Response response = new Response();
-            var type = new CreateUpdateCustomerDTO();
-
-            if (data.GetType() == type.GetType())
-            {
-                var token = AuthorizationService.Authorize(_authParameters.ClientId, _authParameters.ClientSecret, _authParameters.StoreName);
-                var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName, Constants.apiCustomer, id, token.access_token);
-                var result = HelperFunctions.HttpPut(url, data).GetAwaiter().GetResult();
-                if (result != null)
-                {
-
-                    return result;
-
-                }
-                else
-                {
-                    return new BaseDTO()
-                    {
-                        code = (int)HttpStatusCode.BadRequest,
-
-
-                    };
-                }
-
-            }
-            else
-            {
-                throw new System.Exception("Not suppoerted type of parameter");
-            }
+            throw new NotImplementedException();
         }
-        public static CustomerService Instance(AuthInfo authInfo, string clientId, string clientSecret, string storeName)
+        public static GenericService Instance(AuthInfo authInfo, string clientId, string clientSecret, string storeName,string serviceName)
         {
-            if (customerService == null)
+            if (genericService == null)
             {
                 lock (lockObject)
                 {
-                    if (customerService == null)
+                    if (genericService == null)
                     {
-                        customerService = new CustomerService(authInfo, new AuthParameters()
+                        genericService = new GenericService(authInfo, new AuthParameters()
                         {
                             ClientId = clientId,
                             ClientSecret = clientSecret,
                             StoreName = storeName
-                        });
+                        },serviceName);
                     }
                 }
             }
 
-            return customerService;
+            return genericService;
         }
     }
 }

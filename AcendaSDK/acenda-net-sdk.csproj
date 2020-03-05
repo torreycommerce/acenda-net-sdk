@@ -70,7 +70,7 @@
     <Compile Include="Authorization\AuthorizationService.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="DTOs\BaseDTO.cs" />
-    <Compile Include="DTOs\CreateCustomerDTO.cs" />
+    <Compile Include="DTOs\CreateUpdateCustomerDTO.cs" />
     <Compile Include="DTOs\CreateOrderDTO.cs" />
     <Compile Include="DTOs\FulfillmentsDTO.cs" />
     <Compile Include="DTOs\InventoryListDTO.cs" />
@@ -91,6 +91,10 @@
     <Compile Include="Service\OrderService.cs" />
     <Compile Include="Service\ProductService.cs" />
     <Compile Include="Service\ServiceFactory.cs" />
+    <Compile Include="Service\GenericService.cs" />
+    <Compile Include="DTOs\GenericResponseDTO.cs" />
+    <Compile Include="DTOs\CustomerDTO.cs" />
+    <Compile Include="DTOs\CustomerListDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
