@@ -1,5 +1,4 @@
-# acenda-net-sdk
-Acenda .net SDK for .net 4.6+
+# Acenda .net SDK for .net 4.6+
 
 # Authentication
 Obtain your ClientId and Client Secret by creating a developer account: https://developer.acenda.com
