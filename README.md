@@ -141,7 +141,12 @@ To use generic service, create a DTO derived from the expected return value or i
       //Create order
       
       BaseDTO orderCreateResult = order.Create(createOrderDTO);
-              
+# Update Order
+    order.Update("2562542", new UpdateOrderDTO()
+    {
+        status = "closed",
+        email = "bob@acenda.com",
+    });
 # Create fulfillment for order         
       BaseDTO result = order.CreateFulfillments("2562599", new FulfillmentsDTO()
       {
