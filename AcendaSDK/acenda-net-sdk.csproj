@@ -95,6 +95,7 @@
     <Compile Include="DTOs\GenericResponseDTO.cs" />
     <Compile Include="DTOs\CustomerDTO.cs" />
     <Compile Include="DTOs\CustomerListDTO.cs" />
+    <Compile Include="DTOs\UpdateOrderDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
