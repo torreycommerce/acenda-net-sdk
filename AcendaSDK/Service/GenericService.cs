@@ -5,7 +5,7 @@ using AcendaSDK.DTOs;
 
 namespace AcendaSDK.Service
 {
-    public class GenericService:IService
+    public class GenericService : IService
     {
         private static object lockObject = new object();
         private static GenericService genericService;
@@ -13,7 +13,7 @@ namespace AcendaSDK.Service
         private AuthParameters _authParameters = new AuthParameters();
         private string _serviceName;
 
-        public GenericService(AuthInfo authInfo, AuthParameters authParameters,string serviceName)
+        public GenericService(AuthInfo authInfo, AuthParameters authParameters, string serviceName)
         {
             _authParameters = authParameters;
             _authInfo = authInfo;
@@ -23,7 +23,7 @@ namespace AcendaSDK.Service
         public BaseDTO Create(object data)
         {
             var token = AuthorizationService.Authorize(_authParameters.ClientId, _authParameters.ClientSecret, _authParameters.StoreName);
-            var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName,"api/"+ _serviceName, string.Empty, token.access_token);
+            var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName, "api/" + _serviceName, string.Empty, token.access_token);
             var result = HelperFunctions.HttpPost(url, data).GetAwaiter().GetResult();
             if (result != null)
             {
@@ -47,7 +47,7 @@ namespace AcendaSDK.Service
             Response response = new Response();
             BaseDTO baseDTO = new BaseDTO();
             var token = AuthorizationService.Authorize(_authParameters.ClientId, _authParameters.ClientSecret, _authParameters.StoreName);
-            var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName, "api/" + _serviceName, "?id=" + id, token.access_token);
+            var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName, "api/" + _serviceName, id, token.access_token);
             var result = HelperFunctions.HttpDelete(url).GetAwaiter().GetResult();
             if (result.IsSuccessStatusCode)
             {
@@ -77,7 +77,7 @@ namespace AcendaSDK.Service
             Response response = new Response();
             T genericResponseDto = new T();
             var token = AuthorizationService.Authorize(_authParameters.ClientId, _authParameters.ClientSecret, _authParameters.StoreName);
-            var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName, "api/" + _serviceName, "" , token.access_token);
+            var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName, "api/" + _serviceName, "", token.access_token);
             var result = HelperFunctions.HttpGet(url).GetAwaiter().GetResult();
             if (result.IsSuccessStatusCode)
             {
@@ -107,7 +107,7 @@ namespace AcendaSDK.Service
             Response response = new Response();
             T genericDTO = new T();
             var token = AuthorizationService.Authorize(_authParameters.ClientId, _authParameters.ClientSecret, _authParameters.StoreName);
-            var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName, "api/"+ _serviceName, id, token.access_token);
+            var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName, "api/" + _serviceName, id, token.access_token);
             var result = HelperFunctions.HttpGet(url).GetAwaiter().GetResult();
             if (result.IsSuccessStatusCode)
             {
@@ -134,9 +134,31 @@ namespace AcendaSDK.Service
 
         public BaseDTO Update(string id, object data)
         {
-            throw new NotImplementedException();
+            Response response = new Response();
+
+
+            var token = AuthorizationService.Authorize(_authParameters.ClientId, _authParameters.ClientSecret, _authParameters.StoreName);
+            var url = HelperFunctions.CreateUrlFromParts(_authParameters.StoreName, "api/" + _serviceName, id, token.access_token);
+            var result = HelperFunctions.HttpPut(url, data).GetAwaiter().GetResult();
+            if (result != null)
+            {
+
+                return result;
+
+            }
+            else
+            {
+                return new BaseDTO()
+                {
+                    code = (int)HttpStatusCode.BadRequest,
+
+                };
+            }
+
+
+
         }
-        public static GenericService Instance(AuthInfo authInfo, string clientId, string clientSecret, string storeName,string serviceName)
+        public static GenericService Instance(AuthInfo authInfo, string clientId, string clientSecret, string storeName, string serviceName)
         {
             if (genericService == null)
             {
@@ -149,7 +171,7 @@ namespace AcendaSDK.Service
                             ClientId = clientId,
                             ClientSecret = clientSecret,
                             StoreName = storeName
-                        },serviceName);
+                        }, serviceName);
                     }
                 }
             }
