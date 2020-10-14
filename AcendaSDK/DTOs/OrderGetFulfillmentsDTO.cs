@@ -27,9 +27,9 @@ namespace AcendaSDK.DTOs
     }
     public class OrderGetFulfillmentsPackage
     {
-        public int width { get; set; }
-        public int height { get; set; }
-        public int depth { get; set; }
+        public double width { get; set; }
+        public double height { get; set; }
+        public double depth { get; set; }
         public double weight { get; set; }
     }
     public class OrderGetFulfillmentsItem
@@ -42,7 +42,7 @@ namespace AcendaSDK.DTOs
         public string vendor { get; set; }
         public string name { get; set; }
         public int quantity { get; set; }
-        public string fulfilled_quantity { get; set; }
+        public int fulfilled_quantity { get; set; }
         public string fulfillment_status { get; set; }
         public string order_id { get; set; }
         public string returnable { get; set; }

@@ -1,12 +1,42 @@
 ﻿<Properties GitUserInfo="UsingMD">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="AcendaSDK/packages.config">
+    <Files>
+      <File FileName="AcendaSDK/DTOs/BaseDTO.cs" Line="1" Column="1" />
+      <File FileName="AcendaSDK/DTOs/CreateOrderDTO.cs" Line="36" Column="18" />
+      <File FileName="AcendaSDK/DTOs/OrderDTO.cs" Line="13" Column="19" />
+      <File FileName="AcendaSDK/DTOs/OrderGetFulfillmentsDTO.cs" Line="40" Column="47" />
+      <File FileName="AcendaSDK/DTOs/OrderListDTO.cs" Line="36" Column="53" />
+      <File FileName="AcendaSDK/Enums/ServiceType.cs" Line="1" Column="1" />
+      <File FileName="AcendaSDK/Properties/AssemblyInfo.cs" />
+      <File FileName="AcendaSDK/Service/OrderService.cs" Line="35" Column="68" />
+      <File FileName="AcendaSDK/HelperFunctions.cs" />
+      <File FileName="AcendaSDK/Service/CustomerService.cs" Line="1" Column="1" />
+      <File FileName="AcendaSDK/DTOs/CreateUpdateCustomerDTO.cs" Line="1" Column="1" />
+      <File FileName="AcendaSDK/DTOs/CustomerDTO.cs" Line="48" Column="22" />
+      <File FileName="AcendaSDK/DTOs/CustomerListDTO.cs" Line="24" Column="19" />
+      <File FileName="AcendaSDK/DTOs/FulfillmentsDTO.cs" Line="28" Column="6" />
+      <File FileName="AcendaSDK/DTOs/GenericResponseDTO.cs" Line="1" Column="1" />
+      <File FileName="AcendaSDK/DTOs/InventoryListDTO.cs" Line="1" Column="1" />
+      <File FileName="AcendaSDK/DTOs/ProductDTO.cs" Line="62" Column="48" />
+      <File FileName="AcendaSDK/DTOs/ProductListDTO.cs" Line="40" Column="19" />
+      <File FileName="AcendaSDK/DTOs/ProductVariantsDTO.cs" Line="48" Column="1" />
+      <File FileName="AcendaSDK/DTOs/UpdateOrderDTO.cs" Line="52" Column="22" />
+      <File FileName="AcendaSDK/DTOs/VariantDTO.cs" Line="24" Column="47" />
+      <File FileName="AcendaSDK/Service/GenericService.cs" Line="1" Column="1" />
+      <File FileName="AcendaSDK/Service/InventoryService.cs" Line="1" Column="1" />
+      <File FileName="AcendaSDK/Service/IService.cs" Line="1" Column="1" />
+      <File FileName="AcendaSDK/packages.config" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="acenda-net-sdk" expanded="True">
+          <Node name="acenda-net-sdk" expanded="True" selected="True">
             <Node name="acenda-net-sdk" expanded="True" />
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

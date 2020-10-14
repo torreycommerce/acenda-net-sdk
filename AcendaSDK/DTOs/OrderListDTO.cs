@@ -35,8 +35,8 @@ namespace AcendaSDK.DTOs
         public string shipping_zip { get; set; }
         public string shipping_country { get; set; }
         public int shipping_method { get; set; }
-        public int shipping_rate { get; set; }
-        public int shipping_rate_original { get; set; }
+        public double shipping_rate { get; set; }
+        public double shipping_rate_original { get; set; }
         public double tax_percent { get; set; }
         public bool tax_shipping { get; set; }
         public bool tax_included { get; set; }
@@ -59,13 +59,13 @@ namespace AcendaSDK.DTOs
         public bool review_request_sent { get; set; }
         public string shipping_address { get; set; }
         public string name { get; set; }
-        public string discount_price { get; set; }
-        public string discount_shipping_price { get; set; }
-        public string item_subtotal { get; set; }
-        public string adjusted_subtotal { get; set; }
+        public double discount_price { get; set; }
+        public double discount_shipping_price { get; set; }
+        public double item_subtotal { get; set; }
+        public double adjusted_subtotal { get; set; }
         public bool calculate_tax { get; set; }
         public string cancellation_window { get; set; }
-        public int fraud_score { get; set; }
+        public double fraud_score { get; set; }
         public bool iscancellable { get; set; }
     }
 

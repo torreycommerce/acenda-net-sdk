@@ -26,9 +26,9 @@ namespace AcendaSDK.DTOs
     }
     public class FulfillmentPackages
     {
-        public string height { get; set; }
-        public string width { get; set; }
-        public string depth { get; set; }
-        public string weight { get; set; }
+        public double height { get; set; }
+        public double width { get; set; }
+        public double depth { get; set; }
+        public double weight { get; set; }
     }
 }

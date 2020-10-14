@@ -24,10 +24,10 @@ namespace AcendaSDK.DTOs
         public bool require_approval { get; set; }
         public List<object> approved_domains { get; set; }
         public string discount_field { get; set; }
-        public int discount_percent { get; set; }
+        public double discount_percent { get; set; }
         public string spending_limit_type { get; set; }
-        public int spending_limit_amount { get; set; }
-        public int max_order_total { get; set; }
+        public double spending_limit_amount { get; set; }
+        public double max_order_total { get; set; }
         public int max_order_item { get; set; }
         public int max_order_item_quantity { get; set; }
         public bool disable_tax { get; set; }
@@ -45,7 +45,7 @@ namespace AcendaSDK.DTOs
         public string phone_number { get; set; }
         public string group_status { get; set; }
         public int group_id { get; set; }
-        public int group_spending_limit_amount { get; set; }
+        public double group_spending_limit_amount { get; set; }
         public string date_modified { get; set; }
         public string date_created { get; set; }
         public List<object> state { get; set; }

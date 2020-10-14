@@ -18,11 +18,11 @@ namespace AcendaSDK.DTOs
         public string status { get; set; }
         public string name { get; set; }
         public string sku { get; set; }
-        public int price { get; set; }
-        public int cost { get; set; }
-        public int compare_price { get; set; }
-        public int save_price { get; set; }
-        public int save_percent { get; set; }
+        public double price { get; set; }
+        public double cost { get; set; }
+        public double compare_price { get; set; }
+        public double save_price { get; set; }
+        public double save_percent { get; set; }
         public int position { get; set; }
         public List<object> images { get; set; }
         public int inventory_quantity { get; set; }
@@ -49,7 +49,7 @@ namespace AcendaSDK.DTOs
     public class Category
     {
         public int id { get; set; }
-        public List<object> parent_id { get; set; }
+        public List<int> parent_id { get; set; }
         public string status { get; set; }
         public bool track_status { get; set; }
         public string selection { get; set; }
@@ -59,7 +59,7 @@ namespace AcendaSDK.DTOs
         public int position { get; set; }
         public string image_type { get; set; }
         public List<object> image_sort { get; set; }
-        public List<object> images { get; set; }
+        public List<Image> images { get; set; }
         public string page_title { get; set; }
         public string meta_description { get; set; }
         public string meta_keywords { get; set; }

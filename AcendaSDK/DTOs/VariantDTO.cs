@@ -17,23 +17,23 @@ namespace AcendaSDK.DTOs
         public string ean { get; set; }
         public string isbn { get; set; }
         public string has_stock { get; set; }
-        public string cost { get; set; }
+        public double cost { get; set; }
         public string barcode { get; set; }
-        public string price { get; set; }
-        public string compare_price { get; set; }
+        public double price { get; set; }
+        public double compare_price { get; set; }
         public string popularity { get; set; }
         public string position { get; set; }
-        public string images { get; set; }
-        public string inventory_quantity { get; set; }
-        public string inventory_minimum_quantity { get; set; }
-        public string inventory_tracking { get; set; }
+        public List<Image> images { get; set; }
+        public int inventory_quantity { get; set; }
+        public int inventory_minimum_quantity { get; set; }
+        public bool inventory_tracking { get; set; }
         public string inventory_policy { get; set; }
         public string inventory_shipping_estimate { get; set; }
-        public string inventory_returnable { get; set; }
-        public string require_shipping { get; set; }
-        public string discountable { get; set; }
-        public string taxable { get; set; }
-        public string weight { get; set; }
+        public bool inventory_returnable { get; set; }
+        public bool require_shipping { get; set; }
+        public bool discountable { get; set; }
+        public bool taxable { get; set; }
+        public double weight { get; set; }
         public string date_publish { get; set; }
         public string date_expire { get; set; }
        

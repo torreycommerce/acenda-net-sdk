@@ -14,13 +14,13 @@ namespace AcendaSDK.DTOs
         public string status { get; set; }
         public string name { get; set; }
         public string sku { get; set; }
-        public int price { get; set; }
-        public int cost { get; set; }
-        public int compare_price { get; set; }
-        public int save_price { get; set; }
-        public int save_percent { get; set; }
+        public double price { get; set; }
+        public double cost { get; set; }
+        public double compare_price { get; set; }
+        public double save_price { get; set; }
+        public double save_percent { get; set; }
         public int position { get; set; }
-        public List<object> images { get; set; }
+        public List<Image> images { get; set; }
         public int inventory_quantity { get; set; }
         public int inventory_minimum_quantity { get; set; }
         public bool inventory_tracking { get; set; }
@@ -45,7 +45,6 @@ namespace AcendaSDK.DTOs
         public string taxjarcode { get; set; }
         public string color { get; set; }
         public string size { get; set; }
-        public object channelbot_enabled { get; set; }
     }
 
     public class ProductVariantsDTO :BaseDTO

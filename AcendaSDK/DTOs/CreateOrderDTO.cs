@@ -48,7 +48,7 @@ namespace AcendaSDK.DTOs
 
     public class Payment
     {
-        public int amount { get; set; }
+        public double amount { get; set; }
         public string status { get; set; }
         public string platform { get; set; }
         public List<Transaction> transactions { get; set; }

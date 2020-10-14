@@ -13,7 +13,7 @@ namespace AcendaSDK.DTOs
         public string phone_number { get; set; }
         public string group_status { get; set; }
         public int group_id { get; set; }
-        public int group_spending_limit_amount { get; set; }
+        public double group_spending_limit_amount { get; set; }
         public string date_modified { get; set; }
         public string date_created { get; set; }
         public List<object> state { get; set; }

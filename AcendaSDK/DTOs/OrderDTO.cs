@@ -23,10 +23,9 @@ namespace AcendaSDK.DTOs
         public string fulfillment_status { get; set; }
         public int ordered_quantity { get; set; }
         public bool backorder { get; set; }
-        public int price { get; set; }
-        public int ordered_price { get; set; }
+        public double price { get; set; }
+        public double ordered_price { get; set; }
         public string marketplace_name { get; set; }
-        public List<object> warnings { get; set; }
         public string date_created { get; set; }
         public string date_modified { get; set; }
         public bool taxable { get; set; }
@@ -81,8 +80,8 @@ namespace AcendaSDK.DTOs
         public string shipping_zip { get; set; }
         public string shipping_country { get; set; }
         public int shipping_method { get; set; }
-        public int shipping_rate { get; set; }
-        public int shipping_rate_original { get; set; }
+        public double shipping_rate { get; set; }
+        public double shipping_rate_original { get; set; }
         public double tax_percent { get; set; }
         public bool tax_shipping { get; set; }
         public bool tax_included { get; set; }
@@ -90,12 +89,12 @@ namespace AcendaSDK.DTOs
         public string returns_rma_numbers { get; set; }
         public int returnable_items { get; set; }
         public bool giftlist_present { get; set; }
-        public string subtotal { get; set; }
-        public string tax { get; set; }
-        public string tax_original { get; set; }
-        public string total { get; set; }
-        public string charge_amount { get; set; }
-        public string unsettled { get; set; }
+        public double subtotal { get; set; }
+        public double tax { get; set; }
+        public double tax_original { get; set; }
+        public double total { get; set; }
+        public double charge_amount { get; set; }
+        public double unsettled { get; set; }
         public string transaction_status { get; set; }
         public string fulfillment_status { get; set; }
         public bool fraud_check { get; set; }
@@ -105,13 +104,13 @@ namespace AcendaSDK.DTOs
         public bool review_request_sent { get; set; }
         public string shipping_address { get; set; }
         public string name { get; set; }
-        public string discount_price { get; set; }
-        public string discount_shipping_price { get; set; }
-        public string item_subtotal { get; set; }
-        public string adjusted_subtotal { get; set; }
+        public double discount_price { get; set; }
+        public double discount_shipping_price { get; set; }
+        public double item_subtotal { get; set; }
+        public double adjusted_subtotal { get; set; }
         public bool calculate_tax { get; set; }
         public string cancellation_window { get; set; }
-        public int fraud_score { get; set; }
+        public double fraud_score { get; set; }
         public bool iscancellable { get; set; }
         public List<Item> items { get; set; }
         public List<object> returns { get; set; }
@@ -122,7 +121,7 @@ namespace AcendaSDK.DTOs
 
     public class OrderDTO : BaseDTO
     {
-        
+
         public OrderResult result { get; set; }
     }
 }
