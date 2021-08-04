@@ -42,3 +42,4 @@
 /Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/obj/Debug/acenda-net-sdk.csproj.CopyComplete
 /Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/obj/Debug/AcendaSDK.dll
 /Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/obj/Debug/AcendaSDK.pdb
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/obj/Debug/acenda-net-sdk.csprojAssemblyReference.cache

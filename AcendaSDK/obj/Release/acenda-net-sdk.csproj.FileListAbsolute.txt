@@ -1,0 +1,17 @@
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/bin/Release/AcendaSDK.dll
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/bin/Release/AcendaSDK.pdb
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/bin/Release/Newtonsoft.Json.dll
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/bin/Release/System.Net.Http.dll
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/bin/Release/System.Net.Http.Extensions.dll
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/bin/Release/System.Net.Http.Formatting.dll
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/bin/Release/System.Net.Http.Primitives.dll
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/bin/Release/System.Security.Cryptography.Algorithms.dll
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/bin/Release/System.Security.Cryptography.Encoding.dll
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/bin/Release/System.Security.Cryptography.Primitives.dll
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/bin/Release/System.Security.Cryptography.X509Certificates.dll
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/bin/Release/Newtonsoft.Json.xml
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/obj/Release/acenda-net-sdk.csproj.CoreCompileInputs.cache
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/obj/Release/acenda-net-sdk.csproj.CopyComplete
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/obj/Release/AcendaSDK.dll
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/obj/Release/AcendaSDK.pdb
+/Users/ahmettok/Developer/acenda/acenda-net-sdk/AcendaSDK/obj/Release/acenda-net-sdk.csprojAssemblyReference.cache

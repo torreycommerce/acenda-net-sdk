@@ -61,6 +61,11 @@ To use generic service, create a DTO derived from the expected return value or i
 
       CustomerListDTO customerListFromGenericDTO = generic.GetAll<CustomerListDTO>();
 
+# Get List Of Variants Paginated with Query
+        GenericService variant = (GenericService)serviceFactory.GetService(AcendaSDK.Enums.ServiceType.Generic, "variant");
+
+        GenericResponseDTO response = variant.GetAllPaginated<GenericResponseDTO>(2, 100,"{'status':'active'}");
+
 # Get List of all Products
       ProductListDTO productDTOs = product.GetAll<ProductListDTO>();
 
